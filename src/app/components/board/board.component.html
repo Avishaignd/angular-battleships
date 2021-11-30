@@ -1,0 +1,8 @@
+<div class="game-board">
+  <app-tile
+    *ngFor="let item of board"
+    id="item"
+    (click)="onClick(item)"
+    [ngClass]="{box: true, safe: item.sunk && !item.ship ? true : false, ship: item.sunk && item.ship ? true : false, finished: boardClicked.length === 0 ? true : false}"
+  ></app-tile>
+</div>
