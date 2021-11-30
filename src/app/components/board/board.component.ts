@@ -20,32 +20,26 @@ export class BoardComponent implements OnInit {
       this.board.push(test);
     }
     this.createShips();
-    console.log(this.ships);
-    console.log(this.board);
-    
-    
   }
 
   createShips() {
     for (let i = 1; i < 11; i++) {
       let shipLocation = Math.floor(Math.random() * 100);
-      if (!this.ships.includes(shipLocation)){
+      if (!this.ships.includes(shipLocation)) {
         this.ships.push(shipLocation);
         let shipObj = { sunk: false, number: shipLocation + 'S', ship: true };
         this.board[shipLocation] = shipObj;
       }
-    }   
+    }
   }
 
-
   onClick(item: any) {
-    // console.log(item);
-    if(item.ship && item.sunk ===false){
-      this.boardClicked--
+    if (item.ship && item.sunk === false) {
+      this.boardClicked--;
     }
     item.sunk = true;
-    if(this.boardClicked === 0) {
-      alert("You win!")
+    if (this.boardClicked === 0) {
+      alert('You win!');
     }
   }
 }
