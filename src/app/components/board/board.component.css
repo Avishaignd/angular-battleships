@@ -9,6 +9,10 @@
   border: 2px solid black;
 }
 
+.box:focus {
+  border: 5px solid red !important;
+}
+
 .box:nth-child(10n)::after {
   content: "a";
 }

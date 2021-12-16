@@ -2,6 +2,8 @@
   <app-tile
     *ngFor="let item of board"
     id="item"
+    tabindex="0"
+    (keydown)="handleEnter($event, item)"
     (click)="onClick(item)"
     [ngClass]="{
       box: true,
