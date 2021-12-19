@@ -17,7 +17,7 @@
   content: "a";
 }
 
-.test::after {
+.bottom::after {
   content: "b";
 }
 

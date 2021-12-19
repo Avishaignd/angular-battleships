@@ -8,7 +8,7 @@
     [ngClass]="{
       box: true,
       submarine: item.ship,
-      test: item.number > 89 ? true : false,
+      bottom: item.number > 89 ? true : false,
       safe: item.sunk && !item.ship ? true : false,
       ship: item.sunk && item.ship ? true : false,
       finished: boardClicked === 0 ? true : false

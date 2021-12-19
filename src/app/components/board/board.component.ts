@@ -29,6 +29,7 @@ export class BoardComponent implements OnInit {
     })
   }
 
+
   onClick(item: any) {
     if (item.ship && item.sunk === false) {
       this.boardClicked--;
