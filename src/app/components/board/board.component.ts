@@ -24,25 +24,10 @@ export class BoardComponent implements OnInit {
   constructor( private boardService: BoardService ) {}
 
   ngOnInit(): void {
-    // for (let i = 0; i < 100; i++) {
-    //   let test = { sunk: false, number: i, ship: false };
-    //   this.board.push(test);
-    // }
-    this.board = this.boardService.getBoard()
-    this.createShips();    
+    this.boardService.getBoard().subscribe((board) => {
+      this.board = board
+    })
   }
-
-  createShips() {
-    for (let i = 0; i < 10; i++) {
-      let shipLocation = Math.floor(Math.random() * 100);
-      if (!this.ships.includes(shipLocation)) {
-        this.ships.push(shipLocation);
-        let shipObj = { sunk: false, number: shipLocation, ship: true };
-        this.board[shipLocation] = shipObj;
-      }
-    }
-  }
-
 
   onClick(item: any) {
     if (item.ship && item.sunk === false) {
